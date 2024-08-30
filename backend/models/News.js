@@ -1,0 +1,1 @@
+// Mongoose schema/model for news articles
