@@ -1,15 +1,24 @@
-// src/components/NewsItem.js
 import React from 'react';
+import './NewsItem.css';
 
-const NewsItem = ({ newsItem }) => {
+const NewsItem = ({ title, description, url, imageUrl, source }) => {
   return (
-    <li>
-      <a href={newsItem.url} target="_blank" rel="noopener noreferrer">
-        <h2>{newsItem.title}</h2>
-      </a>
-      <p>{newsItem.description}</p>
-      <p>{new Date(newsItem.publishedAt).toLocaleDateString()}</p>
-    </li>
+    <div className="news-item">
+      {imageUrl && (
+        <img src={imageUrl} alt={title} className="news-item-image" />
+      )}
+      <div className="news-item-content">
+        <h3 className="news-item-title">
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
+        </h3>
+        <p className="news-item-description">{description}</p>
+        {source && source.name && (
+          <p className="news-item-source">Source: {source.name}</p>
+        )}
+      </div>
+    </div>
   );
 };
 
