@@ -1,7 +1,7 @@
 import React from 'react';
 import './NewsItem.css';
 
-const NewsItem = ({ title, description, url, imageUrl, source }) => {
+const NewsItem = ({ title, description, url, imageUrl, source, publishedAt }) => {
   return (
     <div className="news-item">
       {imageUrl && (
@@ -14,6 +14,9 @@ const NewsItem = ({ title, description, url, imageUrl, source }) => {
           </a>
         </h3>
         <p className="news-item-description">{description}</p>
+        <p className="news-item-date">
+          Published on: {new Date(publishedAt).toLocaleDateString()}
+        </p>
         {source && source.name && (
           <p className="news-item-source">Source: {source.name}</p>
         )}

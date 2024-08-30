@@ -6,7 +6,7 @@ function App() {
   const [savedNews, setSavedNews] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [articlesPerPage] = useState(10); // Number of articles per page
+  const [articlesPerPage] = useState(9); // Number of articles per page
 
   useEffect(() => {
     const loadSavedNews = async () => {

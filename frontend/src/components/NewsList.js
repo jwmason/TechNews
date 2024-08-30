@@ -17,6 +17,7 @@ const NewsList = ({ news }) => {
           url={article.url}
           imageUrl={article.urlToImage}
           source={article.source || {}}  // Provide a default empty object if source is undefined
+          publishedAt={article.publishedAt}  // Pass publishedAt to NewsItem
         />
       ))}
     </div>
